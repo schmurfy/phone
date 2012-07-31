@@ -23,7 +23,7 @@ module Phoner
     end
 
     def country_code_regexp
-      Regexp.new("^[+]#{country_code}")    
+      @regexp ||= Regexp.new("^[+]#{country_code}")    
     end
   end
   
