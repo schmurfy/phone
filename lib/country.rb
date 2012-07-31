@@ -25,6 +25,16 @@ module Phoner
     def country_code_regexp
       @regexp ||= Regexp.new("^[+]#{country_code}")    
     end
+
+    def formats
+      @formats ||= {
+        # 047451588, 013668734
+        :short => Regexp.new('^0?(' + (area_code || Phone::DEFAULT_AREA_CODE) + ')' + Phone::NUMBER),
+        # 451588
+        :really_short => Regexp.new('^' + Phone::NUMBER)
+      }
+    end
+
   end
   
 end

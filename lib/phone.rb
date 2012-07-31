@@ -131,13 +131,7 @@ module Phoner
     end
 
     def self.formats(country)
-      area_code_regexp = country.area_code || DEFAULT_AREA_CODE
-      {
-        # 047451588, 013668734
-        :short => Regexp.new('^0?(' + area_code_regexp + ')' + NUMBER),
-        # 451588
-        :really_short => Regexp.new('^' + NUMBER)
-      }    
+      country.formats()
     end
 
     # detect format (from FORMATS) of input string
