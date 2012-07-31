@@ -120,14 +120,7 @@ module Phoner
 
     # detect country from the string entered
     def self.detect_country(string)
-      detected_country = nil
-      # find if the number has a country code
-      Country.all.each_pair do |country_code, country|
-        if string =~ country.country_code_regexp
-          detected_country = country
-        end
-      end
-      detected_country    
+      Country::find_by_phone(string)
     end
 
     def self.formats(country)
