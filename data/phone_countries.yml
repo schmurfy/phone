@@ -981,6 +981,7 @@
   :char_3_code: CH
   :name: Switzerland
   :international_dialing_prefix: "0"
+  :area_code: "[0-9]{2}"
 "974": 
   :country_code: "974"
   :national_dialing_prefix: None
